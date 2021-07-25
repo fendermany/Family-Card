@@ -634,7 +634,7 @@ function circ(timeFraction) {
 			Element.prototype.msMatchesSelector;
 	}
 })();
-"use strict"
+"use strict";
 
 // Lazyload
 const lazyImages = document.querySelectorAll('img[data-src],source[data-srcset]');
@@ -676,37 +676,6 @@ function lazyScrollCheck() {
 	}
 }
 
-
-// Прокрутка при клике
-
-
-const menuLinks = document.querySelectorAll('a[data-goto]');
-if (menuLinks.length > 0) {
-	menuLinks.forEach(menuLink => {
-		menuLink.addEventListener("click", onMenuLinkClick);
-	});
-
-	function onMenuLinkClick(e) {
-		const menuLink = e.target;
-		if (menuLink.dataset.goto && document.querySelector(menuLink.dataset.goto)) {
-			const gotoBlock = document.querySelector(menuLink.dataset.goto);
-			const gotoBlockValue = gotoBlock.getBoundingClientRect().top + pageYOffset - document.querySelector('header').offsetHeight;
-
-			if (iconMenu.classList.contains('_active')) {
-				document.body.classList.remove('_lock');
-				iconMenu.classList.remove('_active');
-				menuBody.classList.remove('_active');
-			}
-
-			window.scrollTo({
-				top: gotoBlockValue,
-				behavior: "smooth"
-			});
-			e.preventDefault();
-		}
-	}
-}
-
 // Скрыть меню при клике вне меню
 
 let hamburger = document.querySelector('.hamburger');
@@ -732,7 +701,7 @@ document.addEventListener('click', e => {
 	if (!its_menu && !its_hamburger && menu_is_active) {
 		toggleMenu();
 	}
-})
+});
 let scr_body = document.querySelector('body');
 let scr_blocks = document.querySelectorAll('._scr-sector');
 let scr_items = document.querySelectorAll('._scr-item');

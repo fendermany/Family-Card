@@ -1,7 +1,13 @@
 //PROMO====================================================================================================
 .promo {
 	background: #06A510;
-
+	margin-top: 100px;
+	@media (max-width:$md2+px){
+		margin-top: 80px;
+	}
+	@media (max-width:$md4+px){
+		 margin-top: 65px; 
+	}
 
 	/* .promo__content */
 	&__content {}

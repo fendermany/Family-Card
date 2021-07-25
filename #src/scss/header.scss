@@ -1,5 +1,30 @@
 //====================================================================================================
 .header {
+	position: fixed;
+	width: 100%;
+	z-index: 99999;
+	background: #fff;
+	left: 0;
+	-webkit-box-shadow: 0px -5px 5px -5px rgba(34, 60, 80, 0.6) inset;
+	-moz-box-shadow: 0px -5px 5px -5px rgba(34, 60, 80, 0.6) inset;
+	box-shadow: 0px -5px 5px -5px rgba(34, 60, 80, 0.6) inset;
+
+	&__menu {
+		color: #000000;
+		font-weight: 300;
+		font-size: 24px;
+		line-height: 34px;
+		display: flex;
+		margin: 0;
+
+		li {
+			padding: 0 5px;
+		}
+
+		@media (max-width:$md3+px) {
+			display: none;
+		}
+	}
 
 
 	/* .header__content */
@@ -11,23 +36,18 @@
 		align-items: center;
 		height: 100px;
 		position: relative;
+		justify-content: space-between;
 
 		@media (max-width:$md2+px) {
 			height: 80px;
 		}
 
 		@media (max-width:$md3+px) {
-			position: fixed;
-			width: 100%;
-			z-index: 99999;
-			background: #fff;
-			-webkit-box-shadow: 0px -5px 5px -5px rgba(34, 60, 80, 0.6) inset;
-			-moz-box-shadow: 0px -5px 5px -5px rgba(34, 60, 80, 0.6) inset;
-			box-shadow: 0px -5px 5px -5px rgba(34, 60, 80, 0.6) inset;
+			justify-content: space-between;
 		}
 
 		@media (max-width:$md4+px) {
-			height: 60px;
+			height: 65px;
 		}
 	}
 
@@ -39,53 +59,23 @@
 		align-items: center;
 		justify-content: flex-start;
 		z-index: 999;
-	}
 
-	/* .header__menu */
-	&__menu {}
+		@media (max-width:$md3+px) {
+			order: 2;
+		}
+	}
 
 	/* .header__phone */
 	&__phone {
-		text-align: center;
-
-		a {
-			color: $greyColor;
-			font-size: 26px;
-			line-height: 130%;
-			font-weight: 400;
-		}
+		display: none;
 
 		@media (max-width:$md3+px) {
-			display: none;
+			display: block;
+			order: 3;
 		}
 	}
 
-	/* .header__btn */
-	&__btn {
-		width: 200px;
-		height: 50px;
-		background: $mainColor;
-		border-radius: 50px;
-		font-size: 26px;
-		line-height: 34px;
-		color: #fff;
-		font-weight: 400;
-		display: flex;
-		align-items: center;
-		justify-content: center;
 
-		&-wrapper {
-			z-index: 999;
-		}
-
-		@media (max-width:$md3+px) {
-			display: none;
-		}
-
-		@media (max-width:$md2+px) {
-			width: 170px;
-		}
-	}
 }
 
 .logo {
@@ -102,30 +92,29 @@
 		}
 
 		@media (max-width:$md4+px) {
-			height: 45px;
 			width: 44px;
+			height: 46px;
 		}
 	}
 
 	/* .logo__companyname */
 	&__companyname {
-		display: none;
 		font-weight: 500;
 		font-size: 35px;
-		line-height: 34px;
+		line-height: 35px;
 		color: #000000;
 		z-index: 2;
 		text-decoration: none;
 
 		@media (max-width:$md4+px) {
-			font-size: 25px;
-			line-height: 24px;
+			font-size: 22px;
+			line-height: 22px;
 		}
 
 		@media (max-width:$md3+px) {
 			display: block;
 			font-size: 30px;
-			line-height: 29px;
+			line-height: 30px;
 		}
 
 		@media (min-width:$md2+px) {
@@ -133,158 +122,13 @@
 		}
 
 		span {
-			font-weight: 900;
+			font-weight: 700;
 			align-items: center;
-			letter-spacing: 0.24em;
 			color: $mainColor;
 		}
 	}
 }
 
-.menu {
-
-	/* .menu__body */
-	&__body {}
-
-	/* .menu__phone */
-	&__phone {
-		display: none;
-
-		@media (max-width:$md3+px) {
-			display: block;
-			position: absolute;
-			bottom: 40px;
-			left: 50%;
-			transform: translateX(-50%);
-			width: 100%;
-			text-align: center;
-		}
-
-		a {
-			color: #fff;
-			font-size: 12px;
-			line-height: 130%;
-			font-weight: 400;
-
-		}
-	}
-
-	/* .menu__btn */
-	&__btn {
-		display: none;
-		position: absolute;
-		bottom: 65px;
-		width: 80%;
-		height: 40px;
-		background: $mainColor;
-		border-radius: 50px;
-		border: 2px solid #fff;
-		font-size: 20px;
-		line-height: 130%;
-		color: #fff;
-		font-weight: 400;
-		align-items: center;
-		justify-content: center;
-
-		@media (max-width:$md3+px) {
-			display: flex;
-		}
-	}
-
-
-	/* .menu__list */
-	&__list {
-		margin: 0;
-		display: flex;
-		flex-direction: row;
-		justify-content: flex-end;
-		align-items: center;
-		align-content: center;
-		flex-wrap: nowrap;
-
-		@media (max-width:$md3+px) {
-			z-index: 4;
-			align-items: center;
-			background-color: $mainColor;
-			padding: 80px 20px;
-			height: 100vh;
-			display: flex;
-			flex-direction: column;
-			position: fixed;
-			right: -100%;
-			top: 0;
-			width: 40%;
-			transition: all 0.3s ease;
-			box-shadow: -7px 0px 11px -7px rgba(34, 60, 80, 1);
-
-			&._active {
-				right: 0;
-			}
-		}
-
-		@media (max-width:$md2+px) {
-			justify-content: center;
-		}
-	}
-
-
-	/* .menu__item */
-	&__item {
-		@media (max-width:$md3+px) {
-			margin: 20px 0;
-		}
-
-		a {
-			color: $greyColor;
-			font-weight: 300;
-			font-size: 24px;
-			line-height: 130%;
-			padding: 0 25px;
-			position: relative;
-			cursor: pointer;
-			display: flex;
-			flex-direction: column;
-			align-items: center;
-			justify-content: center;
-
-			@media (max-width:$md3+px) {
-				padding: 0;
-			}
-
-			&:after {
-				display: block;
-				position: absolute;
-				left: 50%;
-				transform: translateX(-50%);
-				bottom: 0;
-				width: 0;
-				height: 1px;
-				background-color: $greyColor;
-				content: "";
-				transition: width 0.3s ease-out;
-
-				@media (max-width:$md3+px) {
-					color: black;
-				}
-			}
-
-			&:hover:after,
-			&:focus:after {
-				width: calc(100% - 50px);
-
-				@media (max-width:$md3+px) {
-					width: 100%;
-				}
-			}
-
-			@media (max-width:$md3+px) {
-				color: #000;
-				font-weight: 600;
-				text-transform: uppercase;
-			}
-		}
-	}
-}
 
 //====================================================================================================
 
@@ -295,18 +139,15 @@
 
 	@media (max-width: $md3+px) {
 		display: block;
-		position: absolute;
-		top: 50%;
-		transform: translateY(-50%);
-		right: 15px;
-		width: 45px;
-		height: 30px;
+		width: 30px;
+		height: 28px;
 		cursor: pointer;
 		z-index: 5;
+		position: relative;
 
 		@media (max-width:$md4+px) {
-			width: 30px;
-			height: 20px;
+			width: 24px;
+			height: 22px;
 		}
 
 		span {
@@ -316,11 +157,8 @@
 			position: absolute;
 			width: 100%;
 			height: 3px;
-			background-color: #000;
-
-			@media (max-width:$md4+px) {
-				height: 2px;
-			}
+			border-radius: 2px;
+			background-color: $mainColor;
 
 			&:first-child {
 				top: 0px;
